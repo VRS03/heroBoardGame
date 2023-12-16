@@ -25,17 +25,6 @@ class BoardCell {
 
     	virtual void attemptMoveTo(size_t& newR, size_t& newC, size_t hRow, size_t hCol) {
             
-            //------------------------------------------------------------
-            // TODO: write the base class funtion for a board cell's 
-            //       attempted move to position (newR,newC). 
-            //
-            //       The default action is to stay put, i.e. new position 
-            //       (newR, newC) is same as old position (myRow, myCol).
-            //
-            //       Note: the Hero's current position (hRow,hCol) is
-            //       needed for this polymorphic function in some derived
-            //       classes, specifically for Baddie movement
-            //------------------------------------------------------------
             newR = this->myRow; 
             newC = this->myCol; 
             
@@ -102,16 +91,6 @@ class Hero: public BoardCell {
             not check if it is a possible move. 
         */
         virtual void attemptMoveTo(size_t& newR, size_t& newC, size_t hRow, size_t hCol) {
-            //------------------------------------------------------------------------
-            // TODO: write attemptMoveTo() for Hero 
-            //      
-            //      Hero's attempted move is determined by the nextMove data member 
-            //      analyze nextMove to determine attempted new position for Hero
-            //          'q' = up and left       'w' = up        'e' = up and right
-            //          'a' = left              's' = stay      'd' = right
-            //          'z' = down and left     'x' = down      'c' = down and right
-            //       interpret ANY other input as 's' = stay
-            //------------------------------------------------------------------------
         
 
             switch(this->nextMove){
@@ -206,28 +185,6 @@ class Monster: public BoardCell {
         
     	virtual void attemptMoveTo(size_t& newR, size_t& newC, size_t hRow, size_t hCol) {
             
-            //------------------------------------------------------------------------
-            // TODO: write attemptMoveTo() for Monster 
-            //      
-            //       Monsters always attempt to navigate toward the hero;
-            //          the hero's position is passed in as (hRow,hCol);
-            //              - regular monsters attempt to move...
-            //                  1 step vertically closer to hero
-            //                  (unless already in same column)
-            //                              AND 
-            //                  1 step horizontally closer to hero
-            //                  (unless already in same row)
-            //              - super monsters attempt to move...
-            //                  2 steps vertically closer to hero
-            //                  (unless already in same column)
-            //                              AND 
-            //                  2 steps horizontally closer to hero
-            //                  (unless already in same row)
-            //          note: super monsters are BIG and CANNOT make 1-step moves in
-            //                either direction; i.e. if they move vertically or 
-            //                horizontally, it must be a 2-step move in either/both 
-            //                direction(s)
-            //------------------------------------------------------------------------
             switch(power){
                 case 1:
                     if(this->getCol() != hCol && this->getRow() != hRow){
@@ -349,12 +306,6 @@ class Bat: public BoardCell {
             of the hero. 
         */
     	virtual void attemptMoveTo(size_t& newR, size_t& newC, size_t hRow, size_t hCol) {
-            //------------------------------------------------------------------------
-            // TODO: write attemptMoveTo() for Bat 
-            //      
-            //       Bats always attempt to navigate to the hero's column, 
-            //       but cannot change rows;
-            //------------------------------------------------------------------------
             
             newC = hCol;
             newR = this->getRow();       
