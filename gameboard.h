@@ -1,7 +1,6 @@
 /*
     Filename: "gameboard.h"
     Author: Viraj Saudagar
-    CS 211 - Project 07
 
     This file defines the GameBoard class which contains the Grid of 
     BoardCells that exhibit polymorphic behavior. The class contains 
