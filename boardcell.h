@@ -1,7 +1,6 @@
 /*
     Filename: "boardcell.h"
     Author: Viraj Saudagar
-    CS 211 - Project 07
 
     This file defines the BoardCell abstract parent class along with its child classes.
     These child classes include the different states a cell on the gameboard can be. 
