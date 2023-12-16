@@ -2,8 +2,6 @@
 FILE: grid.h
 
 AUTHOR: Viraj Saudagar
-INSTITUTION: University of Illinois at Chicago
-COURSE: CS 211 - Fall 2023
 
 DESCRIPTION:
 This class allows for the creation of 2D grids of
